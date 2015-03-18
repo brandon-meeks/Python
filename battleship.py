@@ -7,7 +7,7 @@ for i in range(5): # determines the size of our board
   
 def print_board(board): # Turns the board into a grid
     for row in board:
-        print " ".join(row)
+        print "-".join(row)
       
 print "Let's play battleship"
 print_board(board)
@@ -17,6 +17,9 @@ def random_row(board): # Sets the horizontal location of our battleship
 
 def random_col(board): # Sets the vertical location of our battleship
   return randint(0, len(board) -1)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
   
 for turn in range(4): # The number of turns the player gets
     guess_row = int(raw_input("Guess Row:"))
