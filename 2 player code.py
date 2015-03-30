@@ -75,7 +75,6 @@ if gameMode == 1:
         print ("Turns taken", (turn + 1))
 #Player vs. Player Mode
 if gameMode == 2:
-<<<<<<< HEAD
     players = [] #List for player's names
     #Player One's name and ship location
     player1 = input("Enter Player 1 Name:")
@@ -138,45 +137,3 @@ if gameMode == 2:
             board2[playerTwoGuess_row][playerTwoGuess_col] = "X"
             playerTwoMoves += 1
             print_board(board)
-=======
-    players = []
-    player1 = input("Enter Player 1 Name:")
-    players.append(player1)
-    player2 = input("Enter Player 2 Name:")
-    players.append(player2)
-    print (players) #Prints Players list for debugging purposes
-    print_board(board)
-    while ship_row != "#" and ship_col != "#":
-        for player in players:
-            playerOneGuess_row = int(input("Player 1: Guess Ship's Row: "))
-            playerOneGuess_col = int(input("Player 1: Guess Ship's Column: "))
-            if playerOneGuess_row == ship_row and playerOneGuess_col == ship_col:
-                board[playerOneGuess_row][playerOneGuess_col] = "#"
-                print_board(board)
-                playerOnePts += 1
-                print ("Congratulations! You sank my battleship!")
-                print ("Game Over!")
-                print (players[0], " Points: ", playerOnePts)
-                print (players[0], " Total Moves: ", playerOneMoves)
-                print (players[1], " Points: ", playerOnePts)
-                print (players[1], " Total Moves: ", playerOneMoves)
-                break
-            elif playerOneGuess_row not in range(15) or playerOneGuess_col not in range(15):
-                print ("Oops, that's not even in the ocean.")
-                playerOneMoves += 1
-                print_board(board)
-            elif board[playerOneGuess_row][playerOneGuess_col] == "X":
-                print ("You guessed that one already.")
-                playerOneMoves += 1
-                print_board(board)
-            else:
-                print ("You missed my battleship!")
-                board[playerOneGuess_row][playerOneGuess_col] = "X"
-                playerOneMoves += 1
-                print_board(board)
-            print (player1, "Turns:", playerOneMoves)
-            print (player2, "Turns:", playerTwoMoves)
-                
-                    
-                
->>>>>>> 0a2aed35a122f613d7be50c7f865548659d054e4
